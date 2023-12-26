@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Love...</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+      <h1>Whisper your name, sweetheart...</h1>
+      <form id="form" name="Form" action="./next.html" >
+        <input type="text" id="fname" name="fname" placeholder="Craving for Your Name">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <style>
+      body {
+        font-family: cursive, sans-serif;
+        background-color: #f2f2f2;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      
+      .container {
+        padding: 40px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: lighter;
+        margin-bottom: 20px;
+        color: #a3495e;
+      }
+      
+      input[type="text"] {
+        border: 1px solid #e4d0d0;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: lighter;
+        color: #756b6b;
+        width: 250px;
+        margin-bottom: 10px;
+      }
+      
+      input[type="text"]:focus {
+        outline: none;
+        border: 1px solid #a3495e;
+      }
+      
+      input[type="submit"] {
+        background-color: #a3495e;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #9a3f51;
+      }
+       
+    </style>
+    
+    <script>
+      const form=document.getElementById('form');
+      const x=document.getElementById('fname');
+
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+
+        const xValue=x.value;
+
+        localStorage.setItem('fname',xValue);
+
+        window.location.href="./next.html";
+      })
+    </script>
+  </body>
+  
+</html>
